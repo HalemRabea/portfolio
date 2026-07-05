@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abdel-Haleem Ibrahem Rabea — Senior Android Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Abdel-Haleem Ibrahem Rabea — Senior Android Developer with 10+ years of experience. Expert in Kotlin, Java, Jetpack Compose, and mobile app development." />
+  <style>
+    :root{
+      --accent:#3498db;
+      --accent-2:#e74c3c;
+      --muted:#7f8c8d;
+      --bg-a: linear-gradient(180deg,#e9f1ff 0%, #f5f8fb 100%);
+      --card:#f8f9fa;
+      --glass: rgba(255,255,255,0.7);
+      --radius:12px;
+      font-family: 'Rubik', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+  body {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(18,38,63,0.08);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  align-items: start;
+  animation: fadeUp .45s ease both;
+  backdrop-filter: blur(8px);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: auto;
+}
+
+
+    @keyframes fadeUp { from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none} }
+
+    /* SIDEBAR */
+    .sidebar{
+      padding:28px;
+      background:linear-gradient(180deg,#ffffff 0%, #f7fbff 100%);
+      border-right: 1px solid rgba(50,70,90,0.03);
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .avatar {
+      width:86px;height:86px;border-radius:14px;background:linear-gradient(135deg,var(--accent), #6fb3f7);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;
+      box-shadow: 0 6px 18px rgba(52,152,219,0.12);
+      overflow:hidden;
+    }
+    .avatar img{
+      width:100%;height:100%;object-fit:cover;border-radius:14px;display:block;
+    }
+
+    .name {
+      font-size:1.15rem;font-weight:700;color:#122a3a;margin-top:6px;
+    }
+
+    .role { font-size:0.95rem;color:var(--muted);margin-bottom:6px;font-weight:600; }
+
+    .contact {
+      display:grid;gap:8px;margin-top:6px;font-size:0.95rem;
+    }
+    .contact a{color:inherit;text-decoration:none}
+    .contact-item{display:flex;gap:8px;align-items:center;padding:8px;border-radius:10px;background:var(--glass);backdrop-filter: blur(6px);}
+
+    .nav {
+      display:flex;flex-direction:column;gap:6px;margin-top:12px;
+    }
+    .nav a{
+      display:inline-block;padding:10px 12px;border-radius:10px;color:var(--accent);
+      text-decoration:none;font-weight:600;font-size:0.95rem;
+    }
+    .nav a.active, .nav a:hover{background:rgba(52,152,219,0.06)}
+
+    .sidebar .section-title { margin-top:12px;font-weight:700;color:#203545;font-size:0.9rem;}
+    .skills, .langs {
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;
+    }
+    .chip{background:var(--accent);color:white;padding:6px 10px;border-radius:999px;font-weight:600;font-size:0.85rem}
+
+    /* MAIN content */
+    .main {
+      padding:32px 38px;
+    }
+
+    header.main-header{
+      display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+      margin-bottom:18px;
+    }
+    .hero-left{max-width:70%}
+    .hero-title{font-size:1.5rem;font-weight:700;color:#0f2b3a}
+    .hero-sub{color:var(--muted);margin-top:6px;font-size:0.96rem}
+
+    .cta-links{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn--primary{background:var(--accent);color:white}
+    .btn--ghost{border:1px solid rgba(16,40,60,0.06);background:white;color:#0f2b3a}
+
+    /* sections */
+    .section { margin-top:18px; margin-bottom:18px; }
+    .section h2 { font-size:1.15rem;color:#12323f;margin-bottom:12px;border-bottom:3px solid var(--accent);display:inline-block;padding-bottom:8px}
+    .summary {
+      background:var(--card);padding:18px;border-radius:10px;border-left:5px solid var(--accent);
+      color:#334; font-size:1rem;
+    }
+
+    /* Experience list */
+    .exp-list{display:flex;flex-direction:column;gap:12px}
+    .exp{
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border-radius:10px;padding:16px;border-left:5px solid #eaeaea;
+      box-shadow:0 6px 18px rgba(8,20,30,0.03);
+    }
+    .exp .job{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .job .title{font-weight:700;color:#142d3a}
+    .job .company a{color:var(--accent);font-weight:600;text-decoration:none}
+    .meta{color:var(--muted);font-weight:600;font-size:0.9rem}
+    .desc{margin-top:10px;color:#384350;line-height:1.6}
+    .desc ul{margin:0;padding-left:18px}
+    .desc li{margin-top:4px}
+    .tech{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+
+    .tag{background:#eef6ff;border:1px solid rgba(52,152,219,0.08);padding:6px 10px;border-radius:999px;font-weight:600;font-size:0.85rem;color:#134a6b}
+
+    /* projects grid */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
+    .project{padding:12px;border-radius:10px;background:var(--card);border-left:5px solid var(--accent-2)}
+    .project .p-name{font-weight:700;color:#132c3d}
+    .project .p-desc{color:#36424a;margin-top:8px;font-size:0.95rem}
+    .project a{margin-top:8px;display:inline-block}
+
+    footer{margin-top:20px;color:var(--muted);font-size:0.92rem}
+
+    /* responsive */
+    @media (max-width:980px){
+      .wrapper{grid-template-columns:1fr;min-height:0}
+      .sidebar{order:2;padding:18px}
+      .main{order:1;padding:18px}
+      .hero-left{max-width:100%}
+    }
+
+    @media print{
+      body{padding:0;background:white}
+      .wrapper{box-shadow:none;border-radius:0}
+      .nav,.avatar{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper" role="document" aria-labelledby="profile-heading">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Profile sidebar">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="avatar" aria-hidden="true">
+          <img src="photo.jpg" alt="Abdel-Haleem Ibrahem Rabea"
+               onerror="this.style.display='none'; this.parentElement.textContent='AR';">
+        </div>
+        <div>
+          <div class="name">Abdel-Haleem Ibrahem Rabea</div>
+          <div class="role">Senior Android Developer</div>
+        </div>
+      </div>
+
+      <div class="contact" aria-label="Contact information">
+        <div class="contact-item"><span aria-hidden="true">📍</span><span>Fifth Settlement, New Cairo</span></div>
+        <div class="contact-item"><span aria-hidden="true">📞</span><a href="tel:+201090053398">+20 109 005 3398</a></div>
+        <div class="contact-item"><span aria-hidden="true">✉️</span><a href="mailto:halemrabea@gmail.com">halemrabea@gmail.com</a></div>
+        <div class="contact-item"><span aria-hidden="true">🔗</span><a href="https://www.linkedin.com/in/halem-rabea-68a931138" target="_blank" rel="noopener">LinkedIn</a></div>
+      </div>
+
+      <div class="section-title">Quick Links</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </nav>
+
+      <div style="margin-top:8px">
+        <div class="section-title">Top Skills</div>
+        <div class="skills">
+          <span class="chip">Kotlin</span>
+          <span class="chip">Jetpack Compose</span>
+          <span class="chip">Clean Architecture</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Languages</div>
+        <div class="langs" style="margin-top:8px">
+          <span class="chip" style="background:#27ae60">Arabic</span>
+          <span class="chip" style="background:#16a085">English</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main" id="home">
+      <header class="main-header" role="banner">
+        <div class="hero-left">
+          <div id="profile-heading" class="hero-title">Abdel-Haleem Ibrahem Rabea</div>
+          <div class="hero-sub">Senior Android Developer — 10+ years building high-performance Android applications with Kotlin, Java, and Jetpack Compose, leading cross-functional teams and mentoring junior developers.</div>
+        </div>
+        <div class="cta-links" aria-hidden="true">
+          <a class="btn btn--primary" href="mailto:halemrabea@gmail.com">Contact</a>
+          <a class="btn btn--ghost" href="#projects">Projects</a>
+        </div>
+      </header>
+
+      <section class="section" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Professional Summary</h2>
+        <div class="summary">
+          Senior Android Developer with 10+ years of experience in Kotlin, Java, Jetpack Compose, and Android SDK. Skilled in API integration, UI/UX design, and developing high-performance applications in Agile environments. Experienced in leading cross-functional teams, mentoring junior developers, and collaborating with designers and backend engineers to deliver scalable, user-centered applications.
+        </div>
+      </section>
+
+      <section id="experience" class="section" aria-labelledby="exp-heading">
+        <h2 id="exp-heading">Professional Experience</h2>
+
+        <div class="exp-list">
+
+          <!-- Sure Global Technology (SGT) -->
+          <article class="exp" aria-labelledby="sgt-title">
+            <div class="job">
+              <div>
+                <div id="sgt-title" class="title">Senior Android Developer</div>
+                <div class="company"><span>Sure Global Technology (SGT)</span></div>
+                <div class="meta">May 2021 – Present</div>
+              </div>
+            </div>
+            <div class="desc">
+              <ul>
+                <li>Collaborate with designers and backend developers to refine features and ensure seamless integration.</li>
+                <li>Train and mentor interns and junior developers, providing guidance on best practices and development standards.</li>
+                <li>Establish project structure, delegate tasks, and support junior developers in achieving milestones.</li>
+                <li>Accurately estimate timelines for design, development, and testing phases to ensure timely project delivery.</li>
+              </ul>
+            </div>
+            <div class="tech">
+              <span class="tag">Kotlin</span>
+              <span class="tag">Jetpack Compose</span>
+              <span class="tag">Agile</span>
+            </div>
+          </article>
+
+          <!-- DBS -->
+          <article class="exp" aria-labelledby="dbs-title">
+            <div class="job">
+              <div>
+                <div id="dbs-title" class="title">Senior Android Developer</div>
+                <div class="company"><span>DBS</span></div>
+                <div class="meta">Mar 2020 – May 2021</div>
+              </div>
+            </div>
+            <div class="desc">
+              <ul>
+                <li>Set project structure and assigned tasks to junior developers, providing ongoing support.</li>
+                <li>Discussed design requirements with UI/UX designers and coordinated backend feature integration.</li>
+                <li>Led training sessions for new interns and junior developers, fostering a collaborative and growth-oriented environment.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Eminent -->
+          <article class="exp" aria-labelledby="eminent-title">
+            <div class="job">
+              <div>
+                <div id="eminent-title" class="title">Senior Android Developer</div>
+                <div class="company"><span>Eminent</span></div>
+                <div class="meta">Sept 2019 – Mar 2020</div>
+              </div>
+            </div>
+            <div class="desc">
+              <ul>
+                <li>Collaborated on app design and functionality with both frontend and backend teams.</li>
+                <li>Discussed design requirements with UI/UX designers and coordinated backend feature integration.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Eramint -->
+          <article class="exp" aria-labelledby="eramint-title">
+            <div class="job">
+              <div>
+                <div id="eramint-title" class="title">Android Developer → Senior Android Developer → Team Lead</div>
+                <div class="company"><span>Eramint</span></div>
+                <div class="meta">Jun 2016 – Sept 2019</div>
+              </div>
+            </div>
+            <div class="desc">
+              <ul>
+                <li>Developed and maintained Android applications, translating UI designs into functional apps and integrating backend APIs.</li>
+                <li>Promoted to Senior Developer in July 2017; mentored junior team members and supported complex development projects.</li>
+                <li>Served as Team Lead from November 2018, managing client interactions, overseeing project timelines, and ensuring delivery of high-quality applications aligned with client needs.</li>
+              </ul>
+            </div>
+            <div class="tech">
+              <span class="tag">Java</span>
+              <span class="tag">Retrofit</span>
+              <span class="tag">Team Leadership</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
+        <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <strong>Languages</strong>
+            <div style="margin-top:8px">Kotlin · Java</div>
+          </div>
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <strong>Android Jetpack</strong>
+            <div style="margin-top:8px">Jetpack Compose · WorkManager · Room · Navigation · CameraX</div>
+          </div>
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <strong>Frameworks & Libraries</strong>
+            <div style="margin-top:8px">Android SDK · Retrofit · Dagger/Hilt · Glide · Pdftron · ZoomSDK</div>
+          </div>
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <strong>Methodologies</strong>
+            <div style="margin-top:8px">Agile · MVVM · Clean Architecture</div>
+          </div>
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <strong>Tools</strong>
+            <div style="margin-top:8px">Android Studio · Git · Firebase · REST APIs</div>
+          </div>
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <strong>Other</strong>
+            <div style="margin-top:8px">3D Rendering · AR Development · API Integration</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <div class="p-name">Kreaz</div>
+            <div class="p-desc">Mobile app for selling eastern and western pastries. Built with Java, Retrofit and Glide; integrated secure payment processing and order tracking.</div>
+          </div>
+
+          <div class="project">
+            <div class="p-name">Johnson</div>
+            <div class="p-desc">Interactive 3D car tint preview app using Java, Retrofit and the Rajawali Framework for realistic 3D rendering.</div>
+          </div>
+
+          <div class="project">
+            <div class="p-name">E-Toggar</div>
+            <div class="p-desc">Social e-commerce platform connecting veterinary and agricultural manufacturers directly with consumers. Built with Java, Retrofit and Glide.</div>
+          </div>
+
+          <div class="project">
+            <div class="p-name">DrHealth</div>
+            <div class="p-desc">Healthcare app enabling real-time communication between patients, doctors and pharmacies. Java, Retrofit and Glide.</div>
+          </div>
+
+          <div class="project">
+            <div class="p-name">Al Dawaa</div>
+            <div class="p-desc">E-commerce platform for medical products with search, review and purchase flows. Kotlin, MVVM, Retrofit and Glide.</div>
+          </div>
+
+          <div class="project">
+            <div class="p-name">MajlesTech</div>
+            <div class="p-desc">Electronic governance system for board meetings, integrating PDFTron for document management and ZoomSDK for virtual meetings. Kotlin, MVVM, Hilt and Retrofit.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <div style="font-weight:700">Bachelor's Degree in Computer Science</div>
+            <div style="color:var(--muted)">Faculty of Science, Tanta University — Sept 2011 – Sept 2016</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Abdel-Haleem Ibrahem Rabea — Senior Android Developer · <a href="#contact" style="color:var(--accent)">Contact</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple active link handling and smooth scrolling
+    (function() {
+      const links = document.querySelectorAll('.nav a');
+      links.forEach(a => {
+        a.addEventListener('click', (e) => {
+          links.forEach(x => x.classList.remove('active'));
+          a.classList.add('active');
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({behavior:'smooth',block:'start'});
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
